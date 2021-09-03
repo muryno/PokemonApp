@@ -7,7 +7,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:label="Weight Watcher Products"
+        android:label="Pokemon Game"
         tools:layout="@layout/fragment_home"
         android:name="com.muryno.pokemonapp.presenter.fragment.HomeFragment">
     </fragment>
