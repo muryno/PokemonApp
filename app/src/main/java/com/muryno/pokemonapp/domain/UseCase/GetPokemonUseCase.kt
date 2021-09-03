@@ -8,5 +8,4 @@ import javax.inject.Inject
 
 class GetPokemonUseCase @Inject constructor(private val pokemonRepository: PokemonRepository) {
     suspend fun execute(id : Long): Resource<Pokemon>? = pokemonRepository.getPokemon(id)
-
 }

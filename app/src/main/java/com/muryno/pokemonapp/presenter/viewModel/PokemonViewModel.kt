@@ -18,16 +18,9 @@ import javax.inject.Inject
 class PokemonViewModel @Inject constructor(
     private val getPokemonUseCase: GetPokemonUseCase,
 ) : ViewModel() {
-
-
-
-
     val pokemonLiveData: MutableLiveData<Resource<Pokemon>> = MutableLiveData()
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.IO)
-
-
-
 
     fun getPokemonLiveData(id : Long) = coroutineScope.launch {
 
@@ -43,9 +36,6 @@ class PokemonViewModel @Inject constructor(
             pokemonLiveData.postValue(Resource.Error(e.message.toString()))
         }
     }
-
-
-
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()

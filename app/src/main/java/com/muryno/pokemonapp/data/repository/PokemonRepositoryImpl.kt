@@ -16,8 +16,6 @@ class PokemonRepositoryImpl(
       return  getPokemonFromAPI(id)
     }
 
-
-
     //Making the network call to pokemon api
     private suspend fun getPokemonFromAPI(id : Long): Resource<Pokemon> {
         return try {

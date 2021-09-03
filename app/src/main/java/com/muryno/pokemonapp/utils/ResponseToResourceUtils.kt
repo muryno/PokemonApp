@@ -16,12 +16,9 @@ class ResponseToResourceUtils {
                     return Resource.Success(result)
                 }
             }
-
             if (exception?.message != null) {
                 return Resource.Error(exception.message!!)
             }
-
-
             return Resource.Error(response?.message().toString())
         }
     }

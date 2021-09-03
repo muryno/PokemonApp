@@ -55,7 +55,6 @@ class PokemonMoveAdapter @Inject constructor() :
         holder.bind(statItem)
     }
 
-
     inner class MyViewHolder(val binding: MoveListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(move: Move?) {

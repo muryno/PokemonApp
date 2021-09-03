@@ -34,7 +34,6 @@ class PokemonStaticsAdapter @Inject constructor() :
 
     val differ = AsyncListDiffer(this, callback)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: MoveListItemBinding = DataBindingUtil.inflate(
