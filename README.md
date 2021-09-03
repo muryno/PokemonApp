@@ -8,10 +8,10 @@ domain layer contain Use case which combines data from User and Post Repositorie
 Presenter contain ViewModel which executes Use case, also contain dependency injection folder to wire all together.
 
 libraries used
--Android Jetpack libraries
--ViewModel
--Navigation controller
--Hilt
+Android Jetpack libraries
+ViewModel
+Navigation controller
+Hilt
 -Instrumental testing
 -unit testing
 -retrofit
