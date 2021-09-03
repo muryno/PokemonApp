@@ -15,7 +15,7 @@ import com.muryno.pokemonapp.data.util.Resource
 import com.muryno.pokemonapp.databinding.FragmentHomeBinding
 import com.muryno.pokemonapp.presenter.adapter.PokemonMoveAdapter
 import com.muryno.pokemonapp.presenter.adapter.PokemonStaticsAdapter
-import com.muryno.pokemonapp.presenter.viewModel.WeightWatcherViewModel
+import com.muryno.pokemonapp.presenter.viewModel.PokemonViewModel
 import com.muryno.pokemonapp.utils.randomNumberWithIn800
 import com.muryno.pokemonapp.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
 
 
-    private val viewModel by viewModels<WeightWatcherViewModel>()
+    private val viewModel by viewModels<PokemonViewModel>()
 
     lateinit var binding: FragmentHomeBinding
 

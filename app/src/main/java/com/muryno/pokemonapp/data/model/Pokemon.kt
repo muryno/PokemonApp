@@ -5,9 +5,6 @@ data class Pokemon(
     val moves: List<Move>,
     val name: String,
     val order: Int,
-    val past_types: List<Any>,
-    val species: Species,
     val sprites: Sprites,
     val stats: List<Stat>,
-    val types: List<Type>
 )
