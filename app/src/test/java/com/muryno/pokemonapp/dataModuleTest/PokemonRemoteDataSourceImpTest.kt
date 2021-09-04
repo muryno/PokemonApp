@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PokemonRemoteDataSourceImpTest : BaseUnitTest() {
 
 
-    lateinit var pokemonService : PokemonService
+    lateinit var pokemonService: PokemonService
     private lateinit var mockWebServer: MockWebServer
 
 

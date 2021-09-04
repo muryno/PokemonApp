@@ -51,5 +51,6 @@ fun Context.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
     requireContext().showToast(message, duration)
 }
+
 //generate random number
 fun randomNumberWithIn800() = (0..700).random().toLong()

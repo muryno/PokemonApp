@@ -25,6 +25,7 @@ class UseCaseTest : BaseUnitTest() {
     private var pokemon = FakePokemonData.pokemonFakeResponse
 
     val FETCHID: Long = 1
+
     @Before
     fun setUp() {
         pokemonRepository = Mockito.mock(PokemonRepository::class.java)
@@ -42,7 +43,6 @@ class UseCaseTest : BaseUnitTest() {
             pokemonRepository.getPokemon(FETCHID)
         assertThat(reponse).isNotNull()
     }
-
 
 
 }

@@ -24,14 +24,15 @@ class ViewModelTest : BaseUnitTest() {
     @Before
     fun setUp() {
         appContext = Application()
-        pokemonViewModel = PokemonViewModel(  GetPokemonUseCase(
-            UseCaseRepositoryMock()
-        )
+        pokemonViewModel = PokemonViewModel(
+            GetPokemonUseCase(
+                UseCaseRepositoryMock()
+            )
         )
     }
 
     @Test
-        fun TestWhenPokemonDataIsFetchedLiveData() = runBlocking {
+    fun TestWhenPokemonDataIsFetchedLiveData() = runBlocking {
         pokemonViewModel.getPokemonLiveData(1)
         pokemonViewModel.pokemonLiveData.value = UseCaseRepositoryMock().getPokemon(1)
         val value = pokemonViewModel.pokemonLiveData.getOrAwaitValueTest()

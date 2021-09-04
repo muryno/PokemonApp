@@ -8,7 +8,7 @@ import com.muryno.pokemonapp.domain.repository.PokemonRepository
 
 class UseCaseRepositoryMock : PokemonRepository {
     override suspend fun getPokemon(id: Long): Resource<Pokemon>? {
-        val  dummyData : Pokemon = FakePokemonData.pokemonFakeResponse
+        val dummyData: Pokemon = FakePokemonData.pokemonFakeResponse
         return Resource.Success(dummyData)
     }
 }

@@ -32,7 +32,6 @@ class HomeFragment : Fragment() {
     lateinit var pokemonStaticsAdapter: PokemonStaticsAdapter
 
 
-
     private val viewModel by viewModels<PokemonViewModel>()
 
     lateinit var binding: FragmentHomeBinding
@@ -53,25 +52,25 @@ class HomeFragment : Fragment() {
         inits()
 
         viewModel.pokemonLiveData.observe(viewLifecycleOwner, { response ->
-                when (response) {
-                    is Resource.Success -> {
-                        response.data?.let {
-                            context?.let { it1 -> displayUi(pokemon = it,context= it1) }
-                        }
-                        hideProgressBar()
+            when (response) {
+                is Resource.Success -> {
+                    response.data?.let {
+                        context?.let { it1 -> displayUi(pokemon = it, context = it1) }
                     }
-                    is Resource.Error -> {
-                        hideProgressBar()
-                        response.message?.let {
-                            showToast(it)
-                        }
-
-                    }
-                    is Resource.Loading -> {
-                        showProgressBar()
-                    }
+                    hideProgressBar()
                 }
-            })
+                is Resource.Error -> {
+                    hideProgressBar()
+                    response.message?.let {
+                        showToast(it)
+                    }
+
+                }
+                is Resource.Loading -> {
+                    showProgressBar()
+                }
+            }
+        })
 
         binding.refresh.setOnClickListener {
             inits()
@@ -79,25 +78,26 @@ class HomeFragment : Fragment() {
     }
 
 
-
-    fun inits(){
+    fun inits() {
         viewModel.getPokemonLiveData(randomNumberWithIn800())
     }
 
     private fun initRecyclerView() {
         binding.apply {
             //moves recycler view
-            movesRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
+            movesRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             movesRecyclerView.adapter = moveAdapter
             // statistics recycler view
-            statisticsRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
+            statisticsRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             statisticsRecyclerView.adapter = pokemonStaticsAdapter
         }
 
     }
 
 
-    private fun displayUi( pokemon: Pokemon?,context: Context){
+    private fun displayUi(pokemon: Pokemon?, context: Context) {
 
 
         binding.apply {
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
                 .load(pokemon?.sprites?.front_default)
                 .placeholder(R.drawable.ic_baseline_image_24)
                 .into(binding.frontImageView)
-            }
+        }
     }
 
     private fun showProgressBar() {

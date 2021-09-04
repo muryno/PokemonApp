@@ -8,9 +8,11 @@ import java.util.concurrent.Executors
 
 @HiltAndroidApp
 open class App : Application() {
-    override fun onCreate() { super.onCreate()
+    override fun onCreate() {
+        super.onCreate()
         instance = this
     }
+
     companion object {
         val executorService: ExecutorService =
             Executors.newCachedThreadPool()

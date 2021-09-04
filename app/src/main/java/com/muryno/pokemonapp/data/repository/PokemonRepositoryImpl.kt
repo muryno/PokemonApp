@@ -12,12 +12,12 @@ class PokemonRepositoryImpl(
     private val pokemonRemoteDataSource: PokemonRemoteDataSource,
 ) : PokemonRepository {
 
-    override suspend fun getPokemon(id : Long): Resource<Pokemon> {
-      return  getPokemonFromAPI(id)
+    override suspend fun getPokemon(id: Long): Resource<Pokemon> {
+        return getPokemonFromAPI(id)
     }
 
     //Making the network call to pokemon api
-    private suspend fun getPokemonFromAPI(id : Long): Resource<Pokemon> {
+    private suspend fun getPokemonFromAPI(id: Long): Resource<Pokemon> {
         return try {
             val response = pokemonRemoteDataSource.getPokemonFromApi(id)
             ResponseToResourceUtils.responseToResource(response, null)

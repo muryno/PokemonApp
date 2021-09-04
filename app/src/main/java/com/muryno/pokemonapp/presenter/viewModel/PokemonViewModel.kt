@@ -22,7 +22,7 @@ class PokemonViewModel @Inject constructor(
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.IO)
 
-    fun getPokemonLiveData(id : Long) = coroutineScope.launch {
+    fun getPokemonLiveData(id: Long) = coroutineScope.launch {
 
         pokemonLiveData.postValue(Resource.Loading())
         try {
@@ -36,6 +36,7 @@ class PokemonViewModel @Inject constructor(
             pokemonLiveData.postValue(Resource.Error(e.message.toString()))
         }
     }
+
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
